@@ -1,0 +1,197 @@
+@import './fontFace.css';
+
+html,
+body {
+  font-family: 'graphik';
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+
+body {
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.padding {
+  padding: 50px;
+}
+
+.form {
+  width: 100%;
+}
+
+.log-right-col {
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  width: 35%;
+  justify-content: center;
+
+  align-content: center;
+  justify-items: center;
+}
+
+.log-left-col {
+  width: 70%;
+  height: 100vh;
+}
+
+.log-left-col img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.logo-login {
+  width: 100px;
+  margin: auto;
+}
+.input {
+  direction: ltr;
+  font-size: 18px;
+  font-weight: normal;
+  outline: none;
+  padding: 5px 10px;
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(237, 237, 237);
+}
+.input::placeholder{
+  text-align: right;
+  font-family: 'graphik';
+  color: #2f305f;
+}
+
+.price-input{
+
+  width: auto;
+  margin: 10px;
+}
+
+.btn {
+  padding: 5px 10px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-family: 'graphik';
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #59d492;
+  color: #2f305f;
+}
+.btn-login {
+  height: 40px;
+  width: 106%;
+  margin-top: 50px;
+}
+
+.error-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  height: 100vh;
+  background-image: url('../images/404.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.navbar{
+  background-color: #f0f8f5;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 200px;
+}
+
+
+.navbar nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.navbar nav ul li a{
+  text-decoration: none;
+  font-size: 20px;
+  color:rgb(2, 2, 2);
+}
+
+.navbar nav ul li button{
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-family: 'graphik';
+  text-decoration: none;
+  font-size: 20px;
+  color:rgb(2, 2, 2);
+}
+
+.new-form{
+  padding: 20px 200px;
+}
+
+.new-btn{
+  margin-top: 20px;
+  width: 100%;
+  height: 40px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #ededed;
+  text-align: right;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+.table{
+  padding: 20px 200px;
+}
+
+@media screen and (max-width: 740px) {
+  .col {
+    flex-direction: row;
+    align-content: center;
+    align-self: center;
+  }
+  .row {
+    flex-direction: column;
+  }
+
+  .log-right-col {
+    width: 100%;
+  }
+
+  .log-left-col {
+    display: none;
+  }
+  .navbar{
+    padding: 10px 20px;
+  }
+  .new-form{
+    padding: 30px 20px;
+  }
+  .table{
+    padding: 20px 0px;
+  }
+  
+}
