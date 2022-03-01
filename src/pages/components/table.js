@@ -16,9 +16,9 @@ export default function Table(props) {
           </tr>
         </thead>
         <tbody>
-        {props.data.map((item) => {
+        {props.data.map((item, index) => {
          return <tr key={item.id}>
-           <td>{item.id}</td>
+           <td>{index}</td>
            <td>{item.usd}</td>
            <td>{item.eur}</td>
            <td>{item.gold}</td>

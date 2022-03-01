@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useAlert } from 'react-alert';
 import { useCookies} from 'react-cookie';
 
-export default function NewPrices() {
+export default function NewPrices(props) {
 
   const [cookies, setCookie, removeCookie] = useCookies(["token"]);
 
@@ -36,7 +36,7 @@ export default function NewPrices() {
     event.preventDefault();
 
     axios
-      .post('https://api.dinary.net/prices/new', {
+      .post('https://dinary.herokuapp.com/prices/new', {
         usd: parseFloat(usd).toFixed(2),
         eur: parseFloat(eur).toFixed(2),
         gold: parseFloat(gold).toFixed(2),
@@ -55,12 +55,13 @@ export default function NewPrices() {
           setGold('');
           setIrr('');
           setTryy('');
+          props.onSuccess();
         } else {
           alert.show('يرجى ادخال المعلومات بشكل صحيح');
         }
       })
       .catch((err) => {
-        alert.show('يرجى ادخال المعلومات بشكل صحيح');
+        alert.show(err.toString());
       });
   };
 

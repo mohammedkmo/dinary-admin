@@ -27,13 +27,13 @@ export default function Login(props) {
     event.preventDefault();
 
     axios
-      .post('https://api.dinary.net/user/login', {
+      .post('https://dinary.herokuapp.com/user/login', {
         email: email,
         password: password,
       })
       .then((Response) => {
         if (Response.status === 200) {
-          console.log(Response);
+          console.log(Response.data.auth);
           alert.show(Response.data.msg);
           props.setCookie('token', Response.data.auth)
 

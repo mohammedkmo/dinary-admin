@@ -10,7 +10,7 @@ export default function Home() {
 
 
   const [prices, setPrices] = useState([]);
-  const [cookies, setCookie, removeCookie] = useCookies(["token"]);
+  const [cookies,, removeCookie] = useCookies(["token"]);
 
 
   const getOut=()=>{
@@ -19,10 +19,10 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get('https://api.dinary.net/prices')
+      .get('https://dinary.herokuapp.com/prices')
       .then((response) => {
         if (response.status === 200) {
-          setPrices(response.data.data);
+          setPrices(response.data.data.sort().reverse());
         }
       })
       .catch(function (error) {
@@ -46,7 +46,18 @@ export default function Home() {
         </nav>
       </div>
       <div className='new-form'>
-        <NewPrices></NewPrices>
+        <NewPrices onSuccess={()=> {
+           axios
+           .get('https://dinary.herokuapp.com/prices')
+           .then((response) => {
+             if (response.status === 200) {
+               setPrices(response.data.data);
+             }
+           })
+           .catch(function (error) {
+             console.log(error);
+           });
+        }}></NewPrices>
       </div>
 
       <Table data={prices}></Table>
